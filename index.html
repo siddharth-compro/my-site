@@ -17,6 +17,13 @@
     }
   </style>
   <body>
-      <img src="https://content-security-test-assets.comprodls.com/3.jpg" width="150" height="150">  
+      <img id="asset" width="150" height="150">
   </body>
+  <script>
+    window.onload = function() {
+      console.log("Onload");
+      let imageElement = document.getElementById('asset');
+      imageElement.src = `https://content-security-test-assets.comprodls.com/3.jpg?timestamp=${new Date().getTime()}`
+    }
+  </script>
 </html>
